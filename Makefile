@@ -19,7 +19,7 @@ SIMAVRDIR=/usr/csshare/pkgs/simavr
 SIMAVR=simavr
 
 # Compiler
-AVR=avr-gcc
+AVR=avr-gcc -std=c11
 DEBUGFLAGS=-g -Og 
 SIMFLAGS=-D_SIMULATE_
 # Place the section past the end of reachable memory
