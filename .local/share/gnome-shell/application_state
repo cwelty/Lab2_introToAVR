@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="org.gnome.Nautilus.desktop" open-window-count="0" score="2" last-seen="1578689797"/>
+    <application id="google-chrome.desktop" open-window-count="1" score="118" last-seen="1578689997"/>
+    <application id="org.gnome.Terminal.desktop" open-window-count="1" score="51" last-seen="1578689998"/>
+    <application id="org.gnome.gedit.desktop" open-window-count="0" score="5" last-seen="1578689797"/>
+    <application id="geany.desktop" open-window-count="1" score="20" last-seen="1578689511"/>
+  </context>
+</application-state>
