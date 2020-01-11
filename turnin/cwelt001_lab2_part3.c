@@ -12,11 +12,17 @@
 #include "simAVRHeader.h"
 #endif	
 
+unsigned char GetBit(unsigned char a, unsigned char b) {
+	return ((a & (0x01 << b)) != 0);
+}
+
 int main(void) {
 	DDRA = 0x00; PORTA = 0x00; // Configure port A's 8 pins as inputs
 	DDRC = 0x00; PORTC = 0x00; // Configure port C's 8 pins as outputs, initialize to 0s 
 	unsigned char tmpA = 0x00; // Temporary variable to hold the value of A
+	unsigned char tmpC = 0x00;
 	unsigned char cnt = 0x00;
+	
 while(1) {
 		
 		tmpA = PINA & 0x0F;
@@ -26,12 +32,20 @@ while(1) {
 				  cnt++;
 			  }
 		}
+		/*
+		tmpC = (0x04 - cnt);
+		if(cnt == 4) {
+			PORTC = 0x80;
+		}
+		
+		*/
 		
 		if(cnt < 4){
-			tmpC = (0x04 - cnt) & 0x03;
+			tmpC = (0x04 - cnt) & 0x07;
 		}
+	
 		else{
-			tmpC = ((0x04 - cnt) + 0x80) & 0x83;
+			tmpC = ((0x04 - cnt) + 0x80);
 		}
 		
 		
@@ -40,5 +54,3 @@ while(1) {
 	}
 	return 0;
 }
-
-
